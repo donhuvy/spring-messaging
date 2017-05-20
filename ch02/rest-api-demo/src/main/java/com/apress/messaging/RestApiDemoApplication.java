@@ -19,10 +19,18 @@ public class RestApiDemoApplication {
     @Bean
     public CommandLineRunner data(RateRepository repository) {
         return (args) -> {
-            repository.save(new Rate("EUR", 0.88857F, new Date()));
-            repository.save(new Rate("JPY", 102.17F, new Date()));
-            repository.save(new Rate("MXN", 19.232F, new Date()));
-            repository.save(new Rate("GBP", 0.75705F, new Date()));
+            // Update Saturday - May 20th, 2017.
+            // https://www.bloomberg.com/quote/USDEUR:CUR
+            repository.save(new Rate("EUR", 0.8923F, new Date()));
+
+            // https://www.bloomberg.com/quote/USDJPY:CUR
+            repository.save(new Rate("JPY", 111.26F, new Date()));
+
+            // https://www.bloomberg.com/quote/USDMXN:CUR
+            repository.save(new Rate("MXN", 18.7276F, new Date()));
+
+            // https://www.bloomberg.com/quote/USDGBP:CUR
+            repository.save(new Rate("GBP", 0.7671F, new Date()));
         };
     }
 
