@@ -8,6 +8,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Log {
-	boolean printParamsValues() default false;
-	String callMethodWithNoParamsToString() default "toString";
+
+    boolean printParamsValues() default false;
+
+    String callMethodWithNoParamsToString() default "toString";
+
 }
